@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Todo.Views;assembly=Todo" x:Class="Todo.DoneOrdersPage" Title="Done Orders">
+   <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="Back" Clicked="ReturnToItemList" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArgupppments="FileImageSource" >
+               <On Platform="Android, UWP" Value="plus.png" />
+               <On Platform="iOS" Value="plus.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>-->
+       <!-- <ToolbarItem Text="Done Orders" ></ToolbarItem>-->
+        <!--Clicked="OnDoneOrdersClicked"-->
+    </ContentPage.ToolbarItems>
+    <!--<ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected" IsPullToRefreshEnabled="true">
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                <Label Text="Customer Name" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Notes" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                <Label Text="Total Cost" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" Margin="20,0,-48,0" />
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                  Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding CustomerName}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                        <Label Text="{Binding Notes}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" Bounds=""></Label>
+                        <Label Text= "{Binding TotalCost}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                        <Image Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
+    <ListView  x:Name="listView" Margin="20" ItemSelected="OnListItemSelected" IsPullToRefreshEnabled="true">
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                <Label Text="Customer Name" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                <Label Text="Notes" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Total Cost" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"  Margin="20,0,-48,0" />
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                  Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    <ViewCell.View>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" ></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding CustomerName}" HorizontalTextAlignment="Start"  VerticalTextAlignment="Center"  MaxLines="1" Margin="-95,0,0,0" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding Notes}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" MaxLines="1"  Margin="-68,0,0,0" />
+                            <Label Grid.Row="0" Grid.Column="3" Text="{Binding TotalCost, StringFormat='${0}' }"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" MaxLines="1"  Margin="33,0,0,0"/>
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
